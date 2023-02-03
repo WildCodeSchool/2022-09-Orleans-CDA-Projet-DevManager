@@ -15,7 +15,7 @@ import AuthContext from './contexts/AuthContext';
 import { useContext, useEffect } from 'react';
 import Protected from './components/Protected';
 import { Box } from '@chakra-ui/react';
-import { GameFrame } from './components/GameFrame';
+import GameFrame from './components/GameFrame';
 
 const App = () => {
   const { setUser, setIsLoadingUser } = useContext(AuthContext);
