@@ -60,9 +60,25 @@ const GameFrame = () => {
         anchor={0.5}
       />
       <Sprite
-        image="man1.png"
-        width={50}
-        height={50}
+        image="elevator.png"
+        width={200}
+        height={200}
+        x={100}
+        y={300}
+        anchor={0.5}
+      />
+      <Sprite
+        image="toilet.png"
+        width={100}
+        height={100}
+        x={750}
+        y={50}
+        anchor={0.5}
+      />
+      <Sprite
+        image="directeur.png"
+        width={120}
+        height={120}
         x={characterPosition.x}
         y={characterPosition.y}
         anchor={0.5}
