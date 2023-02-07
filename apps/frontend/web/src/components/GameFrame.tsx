@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Stage, Sprite } from '@pixi/react';
+import { Stage, Sprite, useApp, Text, Container } from '@pixi/react';
+import MovingSprite from './movingSprite';
+import { TextStyle } from 'pixi.js';
 
 const GameFrame = () => {
   // State to store character position
@@ -10,7 +12,7 @@ const GameFrame = () => {
 
   // Listen for keydown events
   useEffect(() => {
-    const handleKeyDown = (event) => {
+    const handleKeyDown = (event: { keyCode: any }) => {
       switch (event.keyCode) {
         case 37: // left arrow key
           setCharacterPosition((prev) => ({ ...prev, x: prev.x - 10 }));
@@ -82,6 +84,34 @@ const GameFrame = () => {
         x={characterPosition.x}
         y={characterPosition.y}
         anchor={0.5}
+      />
+      <Container position={[150, 150]}>
+        <MovingSprite />
+      </Container>
+      <Text
+        text="Coding Room"
+        anchor={0.5}
+        x={440}
+        y={100}
+        style={
+          new TextStyle({
+            align: 'center',
+            fontFamily: '"Source Sans Pro", Helvetica, sans-serif',
+            fontSize: 50,
+            fontWeight: 400,
+            fill: ['#ffffff', 'blue'], // gradient
+            stroke: 'black',
+            strokeThickness: 5,
+            letterSpacing: 20,
+            dropShadow: true,
+            dropShadowColor: '#ccced2',
+            dropShadowBlur: 4,
+            dropShadowAngle: Math.PI / 6,
+            dropShadowDistance: 6,
+            wordWrap: true,
+            wordWrapWidth: 440,
+          })
+        }
       />
     </Stage>
   );
