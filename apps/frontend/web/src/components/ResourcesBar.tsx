@@ -96,7 +96,9 @@ const ResourcesBar = () => {
                   placeholder={gameRoom.room.label}
                 />
               </Box>
-              <Box>{gameRoom.room.name}</Box>
+              <Text color={`${gameRoom.room.color}.900`} as="b" fontSize="2xl">
+                {gameRoom.room.name}
+              </Text>
             </HStack>
             <Spacer display={{ base: 'none', md: 'flex' }} />
 
@@ -179,23 +181,46 @@ const ResourcesBar = () => {
           />
         </HStack>
       </Flex>
-      <Flex minWidth="max-content" alignItems="center" gap="2" pl="80px">
-        <HStack py="10px" display={{ base: 'flex', md: 'none', sm: 'flex' }}>
-          <Box boxSize="30px">
-            <Image src="/company4.png" placeholder="my_company" />
-          </Box>
-          <Box fontSize="xl">{'My Company'}</Box>
-          <Spacer />
-          <Box bgColor="gray.200" rounded="5px" p="5px">
-            <HStack>
-              <Box boxSize="30px">
-                <Image src="/area.png" />
-              </Box>
-              <Text>{'50'}</Text>
-            </HStack>
-          </Box>
-        </HStack>
-      </Flex>
+      {gameRoom ? (
+        <Flex minWidth="max-content" alignItems="center" gap="2" pl="80px">
+          <HStack py="10px" display={{ base: 'flex', md: 'none', sm: 'flex' }}>
+            <Box boxSize="30px">
+              <Image
+                src={gameRoom.room.image}
+                placeholder={gameRoom.room.label}
+              />
+            </Box>
+            <Box fontSize="xl">{gameRoom.room.name}</Box>
+            <Spacer />
+            <Box bgColor="gray.200" rounded="5px" p="5px">
+              <HStack>
+                <Box boxSize="30px">
+                  <Image src="/area.png" />
+                </Box>
+                <Text>{'50'}</Text>
+              </HStack>
+            </Box>
+          </HStack>
+        </Flex>
+      ) : (
+        <Flex minWidth="max-content" alignItems="center" gap="2" pl="80px">
+          <HStack py="10px" display={{ base: 'flex', md: 'none', sm: 'flex' }}>
+            <Box boxSize="30px">
+              <Image src="/company4.png" placeholder="my_company" />
+            </Box>
+            <Box fontSize="xl">{'My Company'}</Box>
+            <Spacer />
+            <Box bgColor="gray.200" rounded="5px" p="5px">
+              <HStack>
+                <Box boxSize="30px">
+                  <Image src="/area.png" />
+                </Box>
+                <Text>{'50'}</Text>
+              </HStack>
+            </Box>
+          </HStack>
+        </Flex>
+      )}
       <ModalResources
         isOpen={isOpenModalResources}
         onClose={onCloseModalResources}

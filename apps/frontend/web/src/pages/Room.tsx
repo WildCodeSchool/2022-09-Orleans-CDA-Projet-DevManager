@@ -89,7 +89,11 @@ const RoomPage = () => {
         <ResourcesBar />
         <Navbar />
         <NavbarRooms />
-        <Flex pt="80px" px="80px" justifyContent="space-between">
+        <Flex
+          pt={{ base: '40%', lg: '5%', md: '20%', sm: '30%' }}
+          px={{ base: '0', lg: '80px', md: '80px', sm: '80px' }}
+          justifyContent="space-between"
+        >
           <Box
             boxSize="100%"
             display={{ base: 'none', lg: 'flex', md: 'column', sm: 'none' }}
@@ -97,32 +101,38 @@ const RoomPage = () => {
             <Image src="/overview.jpg" alt="overview" />
           </Box>
           {gameRoom && gameEvents && gameCharacters && (
-            <VStack>
-              {gameCharacters
-                .filter(
-                  (gameCharacter) =>
-                    gameRoom.room.id === gameCharacter.character.room.id
-                )
-                .map((gameCharacter) => (
-                  <CharacterCard
-                    key={gameCharacter.character.id}
-                    gameCharacter={gameCharacter}
-                    gameRoom={gameRoom}
-                    gameResources={gameResources}
-                  />
-                ))}
-              {gameEvents
-                .filter(
-                  (gameEvent) => gameRoom.room.id === gameEvent.event.room.id
-                )
-                .map((gameEvent) => (
-                  <EventCard
-                    key={gameEvent.id}
-                    gameEvent={gameEvent}
-                    gameRoom={gameRoom}
-                  />
-                ))}
-            </VStack>
+            <Box
+              bgColor={`${gameRoom.room.color}.200`}
+              py={{ base: '10', xl: '20' }}
+              px={{ base: '0', xl: '20', lg: '20', md: '10' }}
+            >
+              <VStack>
+                {gameCharacters
+                  .filter(
+                    (gameCharacter) =>
+                      gameRoom.room.id === gameCharacter.character.room.id
+                  )
+                  .map((gameCharacter) => (
+                    <CharacterCard
+                      key={gameCharacter.character.id}
+                      gameCharacter={gameCharacter}
+                      gameRoom={gameRoom}
+                      gameResources={gameResources}
+                    />
+                  ))}
+                {gameEvents
+                  .filter(
+                    (gameEvent) => gameRoom.room.id === gameEvent.event.room.id
+                  )
+                  .map((gameEvent) => (
+                    <EventCard
+                      key={gameEvent.id}
+                      gameEvent={gameEvent}
+                      gameRoom={gameRoom}
+                    />
+                  ))}
+              </VStack>
+            </Box>
           )}
         </Flex>
       </Box>
