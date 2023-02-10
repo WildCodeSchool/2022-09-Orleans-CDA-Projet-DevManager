@@ -87,15 +87,19 @@ const ResourcesBar = () => {
   return (
     <Box position="absolute" top="0">
       <Flex minWidth="max-content" gap="2" pl="80px">
-        <HStack display={{ base: 'none', md: 'flex' }}>
-          <Box boxSize="30px">
-            <Image src="/company4.png" placeholder="my_company" />
-          </Box>
-          <Box>{'My Company'}</Box>
-        </HStack>
-        <Spacer display={{ base: 'none', md: 'flex' }} />
-        {gameRoom && (
+        {gameRoom ? (
           <>
+            <HStack display={{ base: 'none', md: 'flex' }}>
+              <Box boxSize="30px">
+                <Image
+                  src={gameRoom.room.image}
+                  placeholder={gameRoom.room.label}
+                />
+              </Box>
+              <Box>{gameRoom.room.name}</Box>
+            </HStack>
+            <Spacer display={{ base: 'none', md: 'flex' }} />
+
             <VStack display={{ base: 'none', md: 'flex' }}>
               <Box>{'Remaining'}</Box>
               <HStack>
@@ -115,6 +119,13 @@ const ResourcesBar = () => {
               </HStack>
             </VStack>
           </>
+        ) : (
+          <HStack display={{ base: 'none', md: 'flex' }}>
+            <Box boxSize="30px">
+              <Image src="/company4.png" placeholder="my_company" />
+            </Box>
+            <Box>{'My Company'}</Box>
+          </HStack>
         )}
         <Spacer display={{ base: 'none', md: 'flex' }} />
         <HStack>
