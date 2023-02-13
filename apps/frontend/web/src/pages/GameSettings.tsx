@@ -140,6 +140,7 @@ const GameSettings = () => {
               sm: `${pageColor}.200`,
             }}
             flexGrow="1"
+            mb={'2rem'}
           >
             <VStack
               bgColor={`${pageColor}.200`}

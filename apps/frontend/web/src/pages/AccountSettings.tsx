@@ -132,7 +132,7 @@ const AccountSettings = () => {
         >
           <Heading color={`${pageColor}.900`}>{'Account Setting'}</Heading>
         </Flex>
-        <Flex w="100%">
+        <Flex w="100%" mb={'2rem'}>
           <Flex
             justifyContent="space-around"
             bgColor={{
