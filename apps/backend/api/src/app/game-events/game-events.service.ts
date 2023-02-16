@@ -77,10 +77,39 @@ export class GameEventsService {
     id: number,
     updateGameEventDto: UpdateGameEventDto,
   ): Promise<UpdateResult> {
+    console.log('updateGameEventDto', updateGameEventDto);
     return this.gameEventsRepository.update(id, updateGameEventDto);
   }
 
   async remove(id: number): Promise<void> {
     await this.gameEventsRepository.delete(id);
+  }
+
+  async start(id: number, gameId: number) {
+    const gameEvent = await this.gameEventsRepository
+      .createQueryBuilder('gameEvent')
+      .leftJoinAndSelect('gameEvent.game', 'game')
+      .leftJoinAndSelect('gameEvent.event', 'event')
+      .leftJoinAndSelect('event.room', 'room')
+      .leftJoinAndSelect('event.bonusMalus', 'bonusMalus')
+      .leftJoinAndSelect('bonusMalus.character', 'character')
+      .where('gameEvent.event.id = :id', { id })
+      .andWhere('gameEvent.gameId = :gameId', { gameId })
+      .getOne();
+
+    console.log('event duration', gameEvent.event.duration);
+    console.log('event id', id);
+
+    const startDate = new Date().toISOString();
+    const actualDate = new Date();
+    actualDate.setMinutes(
+      actualDate.getMinutes() + gameEvent.event.duration / 60,
+    );
+    const endDate = actualDate.toISOString();
+    console.log('start date', startDate);
+    console.log('end date', endDate);
+    console.log('---------------------------------------------');
+
+    return { success: true };
   }
 }

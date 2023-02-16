@@ -1174,92 +1174,92 @@ export class ForgeService {
 
     const gameEvents = [
       {
-        startDate: '1970-01-01 00:00',
-        endDate: '1970-01-01 00:00',
+        startDate: '1970-01-01 00:00:00',
+        endDate: '1970-01-01 00:00:00',
         eventId: hackathon.id, // Hackathon
         gameId: game1.id, // Game 1
       },
       {
-        startDate: '1970-01-01 00:00',
-        endDate: '1970-01-01 00:00',
+        startDate: '1970-01-01 00:00:00',
+        endDate: '1970-01-01 00:00:00',
         eventId: talentWeek.id, // Talent week
         gameId: game1.id, // Game 1
       },
       {
-        startDate: '1970-01-01 00:00',
-        endDate: '1970-01-01 00:00',
+        startDate: '1970-01-01 00:00:00',
+        endDate: '1970-01-01 00:00:00',
         eventId: jobDating.id, // Job dating
         gameId: game1.id, // Game 1
       },
       {
-        startDate: '1970-01-01 00:00',
-        endDate: '1970-01-01 00:00',
+        startDate: '1970-01-01 00:00:00',
+        endDate: '1970-01-01 00:00:00',
         eventId: hackathon.id, // Hackathon
         gameId: game2.id, // Game 2
       },
       {
-        startDate: '1970-01-01 00:00',
-        endDate: '1970-01-01 00:00',
+        startDate: '1970-01-01 00:00:00',
+        endDate: '1970-01-01 00:00:00',
         eventId: talentWeek.id, // Talent week
         gameId: game2.id, // Game 2
       },
       {
-        startDate: '1970-01-01 00:00',
-        endDate: '1970-01-01 00:00',
+        startDate: '1970-01-01 00:00:00',
+        endDate: '1970-01-01 00:00:00',
         eventId: jobDating.id, // Job dating
         gameId: game2.id, // Game 2
       },
       {
-        startDate: '1970-01-01 00:00',
-        endDate: '1970-01-01 00:00',
+        startDate: '1970-01-01 00:00:00',
+        endDate: '1970-01-01 00:00:00',
         eventId: hackathon.id, // Hackathon
         gameId: game3.id, // Game 3
       },
       {
-        startDate: '1970-01-01 00:00',
-        endDate: '1970-01-01 00:00',
+        startDate: '1970-01-01 00:00:00',
+        endDate: '1970-01-01 00:00:00',
         eventId: talentWeek.id, // Talent week
         gameId: game3.id, // Game 3
       },
       {
-        startDate: '1970-01-01 00:00',
-        endDate: '1970-01-01 00:00',
+        startDate: '1970-01-01 00:00:00',
+        endDate: '1970-01-01 00:00:00',
         eventId: jobDating.id, // Job dating
         gameId: game3.id, // Game 3
       },
       {
-        startDate: '1970-01-01 00:00',
-        endDate: '1970-01-01 00:00',
+        startDate: '1970-01-01 00:00:00',
+        endDate: '1970-01-01 00:00:00',
         eventId: hackathon.id, // Hackathon
         gameId: game4.id, // Game 4
       },
       {
-        startDate: '1970-01-01 00:00',
-        endDate: '1970-01-01 00:00',
+        startDate: '1970-01-01 00:00:00',
+        endDate: '1970-01-01 00:00:00',
         eventId: talentWeek.id, // Talent week
         gameId: game4.id, // Game 4
       },
       {
-        startDate: '1970-01-01 00:00',
-        endDate: '1970-01-01 00:00',
+        startDate: '1970-01-01 00:00:00',
+        endDate: '1970-01-01 00:00:00',
         eventId: jobDating.id, // Job dating
         gameId: game4.id, // Game 4
       },
       {
-        startDate: '1970-01-01 00:00',
-        endDate: '1970-01-01 00:00',
+        startDate: '1970-01-01 00:00:00',
+        endDate: '1970-01-01 00:00:00',
         eventId: hackathon.id, // Hackathon
         gameId: game5.id, // Game 5
       },
       {
-        startDate: '1970-01-01 00:00',
-        endDate: '1970-01-01 00:00',
+        startDate: '1970-01-01 00:00:00',
+        endDate: '1970-01-01 00:00:00',
         eventId: talentWeek.id, // Talent week
         gameId: game5.id, // Game 5
       },
       {
-        startDate: '1970-01-01 00:00',
-        endDate: '1970-01-01 00:00',
+        startDate: '1970-01-01 00:00:00',
+        endDate: '1970-01-01 00:00:00',
         eventId: jobDating.id, // Job dating
         gameId: game5.id, // Game 5
       },

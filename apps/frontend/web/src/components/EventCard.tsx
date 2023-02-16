@@ -9,6 +9,7 @@ import {
   Heading,
   Image,
   useDisclosure,
+  useToast,
 } from '@chakra-ui/react';
 import { GameRoom, GameEvent } from '@apps/backend-api';
 import EventModal from './popups/EventModal';
@@ -22,6 +23,37 @@ function EventCard({
   gameEvent: GameEvent;
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const toast = useToast();
+
+  const startEvent = async () => {
+    try {
+      const res = await fetch(`/api/game-events/start/${gameEvent.event.id}/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({}),
+      });
+      const jsonResponse = await res.json();
+      if (jsonResponse.success) {
+        toast({
+          title: `Event started`,
+          description: `You just started ${gameEvent.event.name}!`,
+          status: 'success',
+          duration: 5000,
+          isClosable: true,
+        });
+      } else {
+        toast({
+          title: `Can't start event`,
+          description: `Not enough devDollars to start ${gameEvent.event.name}!`,
+          status: 'error',
+          duration: 5000,
+          isClosable: true,
+        });
+      }
+    } catch {}
+  };
 
   return (
     <>
@@ -80,8 +112,9 @@ function EventCard({
                 size="lg"
                 color="white"
                 ml="5"
+                onClick={startEvent}
               >
-                {'+ 1'}
+                {'Launch'}
               </Button>
             </Box>
           </Flex>

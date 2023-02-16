@@ -195,7 +195,7 @@ const ResourcesBar = () => {
               </Box>
               <Text
                 as="b"
-                fontSize={{ base: 'xl', xl: '3xl' }}
+                fontSize={{ base: 'xx-small', xl: '3xl' }}
                 fontFamily="heading"
                 color={`${gameRoom.room.color}.900`}
               >

@@ -47,4 +47,10 @@ export class GameEventsController {
   remove(@Param('id') id: string) {
     return this.gameEventsService.remove(+id);
   }
+
+  @Post('/start/:id')
+  startEvent(@Param('id') id: string, @Req() req) {
+    const gameId = req.signedCookies['game'];
+    return this.gameEventsService.start(+id, gameId);
+  }
 }
