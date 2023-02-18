@@ -108,7 +108,9 @@ export class GameEventsService {
     const endDate = actualDate.toISOString();
     console.log('start date', startDate);
     console.log('end date', endDate);
-    console.log('---------------------------------------------');
+    console.log(
+      '------------------------------------------------------------------------------------------',
+    );
 
     return { success: true };
   }
