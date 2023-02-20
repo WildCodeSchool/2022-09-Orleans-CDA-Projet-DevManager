@@ -25,6 +25,7 @@ function RoomElementCard({
   const { gameRoom } = useContext(GameContext);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
+  const id = 'toast';
 
   const addCharacters = async () => {
     try {
@@ -41,15 +42,7 @@ function RoomElementCard({
         }
       );
       const jsonResponse = await res.json();
-      if (jsonResponse.success) {
-        toast({
-          title: `Hire ${gameCharacter?.character.name}`,
-          description: `Congratulations, you hired: ${gameCharacter?.character.name}!`,
-          status: 'success',
-          duration: 9000,
-          isClosable: true,
-        });
-      } else {
+      if (!jsonResponse.success) {
         toast({
           title: 'Resource Used',
           description: `You don't have any resources or space in your ${gameRoom?.room.name}!`,
@@ -73,15 +66,7 @@ function RoomElementCard({
         }),
       });
       const jsonResponse = await res.json();
-      if (jsonResponse.success) {
-        toast({
-          title: `Up ${gameRoom?.room.name} total size`,
-          description: `Congratulations, your ${gameRoom?.room.name} is growing up!`,
-          status: 'success',
-          duration: 9000,
-          isClosable: true,
-        });
-      } else {
+      if (!jsonResponse.success) {
         toast({
           title: `Up ${gameRoom?.room.name} total size`,
           description: `You don't have enough devDollars!`,
