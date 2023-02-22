@@ -87,7 +87,7 @@ const Leaderboard = () => {
                   <Text fontSize={{ base: 'l', md: 'xl' }} mr="2">
                     {'Your Points:'}
                   </Text>
-                  <Image boxSize="2rem" mr="1" src="dollar.png" />
+                  <Image boxSize="2rem" mr="1" src="/dollar.png" />
                   <Text fontSize={{ base: 'l', md: 'xl' }}>
                     {` ${userGameResources?.quantity}`}
                   </Text>
